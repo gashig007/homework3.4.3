@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ProgramAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ProgramViewHolder> {
     private ArrayList<String> programs;
 
     public ProgramAdapter(ArrayList<String> programs) {
@@ -19,13 +19,13 @@ public class ProgramAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProgramViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ProgramViewHolder(LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.item_programm, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProgramViewHolder holder, int position) {
         holder.bind(programs.get(position));
     }
 
